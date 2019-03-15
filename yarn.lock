@@ -7917,7 +7917,7 @@ react-dev-utils@^8.0.0:
     strip-ansi "5.0.0"
     text-table "0.2.0"
 
-react-dom@16.8.4:
+react-dom@^16.8.4:
   version "16.8.4"
   resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/react-dom/-/react-dom-16.8.4.tgz#1061a8e01a2b3b0c8160037441c3bf00a0e3bc48"
   integrity sha1-EGGo4BorOwyBYAN0QcO/AKDjvEg=
@@ -7931,6 +7931,11 @@ react-error-overlay@^5.1.4:
   version "5.1.4"
   resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/react-error-overlay/-/react-error-overlay-5.1.4.tgz#88dfb88857c18ceb3b9f95076f850d7121776991"
   integrity sha1-iN+4iFfBjOs7n5UHb4UNcSF3aZE=
+
+react-icons@^3.5.0:
+  version "3.5.0"
+  resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/react-icons/-/react-icons-3.5.0.tgz#a6135480e3bcbc63f5dd045193ef2a814263d8d1"
+  integrity sha1-phNUgOO8vGP13QRRk+8qgUJj2NE=
 
 react-is@^16.8.1:
   version "16.8.4"
@@ -7991,7 +7996,7 @@ react-scripts@2.1.8:
   optionalDependencies:
     fsevents "1.2.4"
 
-react@16.8.4:
+react@^16.8.4:
   version "16.8.4"
   resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/react/-/react-16.8.4.tgz#fdf7bd9ae53f03a9c4cd1a371432c206be1c4768"
   integrity sha1-/fe9muU/A6nEzRo3FDLCBr4cR2g=
