@@ -14,6 +14,7 @@ export default class Board extends Component {
 		this.update = this.update.bind(this);
 		this.remove = this.remove.bind(this);
 		this.add = this.add.bind(this);
+		this.nextId = this.nextId.bind(this);
 	}
 
 	componentWillMount() {
@@ -27,15 +28,21 @@ export default class Board extends Component {
 	}
 
 	add(text){
+		const id = this.nextId();
 		this.setState(prevState => ({
 			notes: [
 				...prevState.notes,
 				{
-					id: prevState.notes.length,
+					id: id,
 					note: text
 				}
 			]
 		}))
+	}
+
+	nextId(){
+		this._nextId = this._nextId || 0;
+		return this._nextId++;
 	}
 
 	remove(id){
@@ -50,10 +57,10 @@ export default class Board extends Component {
 		}));
 	}
 
-	eachNote(note, i){
+	eachNote(note){
 		return (
-			<Note   key={i}
-			        index={i}
+			<Note   key={note.id}
+			        index={note.id}
 			        onChange={this.update}
 			        onRemove={this.remove}>
 				{note.note}
