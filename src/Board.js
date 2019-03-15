@@ -16,17 +16,6 @@ export default class Board extends Component {
 		this.add = this.add.bind(this);
 	}
 
-	eachNote(note, i){
-		return (
-			<Note   key={i}
-			        index={i}
-					onChange={this.update}
-					onRemove={this.remove}>
-				{note.note}
-			</Note>
-		);
-	}
-
 	componentWillMount() {
 		if(this.props.count){
 			fetch(`https://baconipsum.com/appi/?type=all&sentences=${this.props.count}`)
@@ -59,6 +48,17 @@ export default class Board extends Component {
 				note => (note.id) !== id ? note : {...note, note: newText}
 			)
 		}));
+	}
+
+	eachNote(note, i){
+		return (
+			<Note   key={i}
+			        index={i}
+			        onChange={this.update}
+			        onRemove={this.remove}>
+				{note.note}
+			</Note>
+		);
 	}
 
 	render(){
