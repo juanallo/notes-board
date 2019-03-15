@@ -15,19 +15,6 @@ class Note extends Component {
 		this.renderForm = this.renderForm.bind(this);
 		this.renderDisplay = this.renderDisplay.bind(this);
 		this.save = this.save.bind(this);
-		this.randomBetween = this.randomBetween.bind(this);
-	}
-
-	randomBetween(x, y, s){
-		return x + Math.ceil(Math.random() * (y - x)) + s;
-	}
-
-	componentWillMount(){
-		this.style = {
-			left: this.randomBetween(0, window.innerWidth - 150, 'px'),
-			top: this.randomBetween(0, window.innerHeight - 150, 'px'),
-			transform: `rotate(${this.randomBetween(-25, 25, 'deg')})`
-		}
 	}
 
 	shouldComponentUpdate(nextProps, nextState){
@@ -64,7 +51,7 @@ class Note extends Component {
 
 	renderForm() {
 		return (
-			<div className="note" style={this.style}>
+			<div className="note" style={this.props.style}>
 				<form className="note__form" onSubmit={this.save}>
 					<textarea ref={ input => this._nexText = input}>
 						{this.props.children}
@@ -79,7 +66,7 @@ class Note extends Component {
 
 	renderDisplay(){
 		return (
-			<div className="note" style={this.style}>
+			<div className="note" style={this.props.style}>
 				<p>{this.props.children}</p>
 				<span>
 					<button id="edit" onClick={this.edit}><FaPen  /></button>

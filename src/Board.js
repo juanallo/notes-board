@@ -15,6 +15,7 @@ export default class Board extends Component {
 		this.remove = this.remove.bind(this);
 		this.add = this.add.bind(this);
 		this.nextId = this.nextId.bind(this);
+		this.randomBetween = this.randomBetween.bind(this);
 	}
 
 	componentWillMount() {
@@ -29,15 +30,26 @@ export default class Board extends Component {
 
 	add(text){
 		const id = this.nextId();
+
+		const style = {
+			left: this.randomBetween(0, window.innerWidth - 150, 'px'),
+			top: this.randomBetween(0, window.innerHeight - 150, 'px')
+		};
+
 		this.setState(prevState => ({
 			notes: [
 				...prevState.notes,
 				{
 					id: id,
-					note: text
+					note: text,
+					style: style
 				}
 			]
 		}))
+	}
+
+	randomBetween(x, y, s){
+		return x + Math.ceil(Math.random() * (y - x)) + s;
 	}
 
 	nextId(){
@@ -61,6 +73,7 @@ export default class Board extends Component {
 		return (
 			<Note   key={note.id}
 			        index={note.id}
+			        style={note.style}
 			        onChange={this.update}
 			        onRemove={this.remove}>
 				{note.note}
