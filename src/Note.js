@@ -3,12 +3,11 @@ import {FaPen, FaTrash, FaRegSave} from 'react-icons/fa';
 
 class Note extends Component {
 
-	constructor({text='Learn React'}){
-		super({text});
+	constructor(props){
+		super(props);
 
 		this.state = {
-			editing: false,
-			text: text
+			editing: false
 		};
 
 		this.remove = this.remove.bind(this);
@@ -24,24 +23,27 @@ class Note extends Component {
 		})
 	}
 
-	save(){
+	save(e){
+		e.preventDefault();
+		this.props.onChange(this._nexText.value, this.props.index);
 		this.setState({
-			editing: false,
-			text: this._nexText.value
+			editing: false
 		});
 	}
 
 	remove(){
-		alert('Remove');
+		this.props.onRemove(this.props.index);
 	}
 
 	renderForm() {
 		return (
 			<div className="note">
-				<form className="note__form">
-					<textarea ref={ input => this._nexText = input} defaultValue={this.state.text}/>
+				<form className="note__form" onSubmit={this.save}>
+					<textarea ref={ input => this._nexText = input}>
+						{this.props.children}
+					</textarea>
 					<div className="form__footer">
-						<button id="save" onClick={this.save}><FaRegSave /></button>
+						<button id="save"><FaRegSave /></button>
 					</div>
 				</form>
 			</div>
@@ -51,7 +53,7 @@ class Note extends Component {
 	renderDisplay(){
 		return (
 			<div className="note">
-				<p>{this.state.text}</p>
+				<p>{this.props.children}</p>
 				<span>
 					<button id="edit" onClick={this.edit}><FaPen  /></button>
 					<button id="remove" onClick={this.remove}><FaTrash /></button>
