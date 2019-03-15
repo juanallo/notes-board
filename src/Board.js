@@ -8,20 +8,12 @@ export default class Board extends Component {
 		super(props);
 
 		this.state = {
-			notes: [
-				{
-					id: 0,
-					note: 'Creating Boards'
-				},
-				{
-					id: 1,
-					note: 'Another Note'
-				}
-			]
+			notes: []
 		};
 		this.eachNote = this.eachNote.bind(this);
 		this.update = this.update.bind(this);
 		this.remove = this.remove.bind(this);
+		this.add = this.add.bind(this);
 	}
 
 	eachNote(note, i){
@@ -33,6 +25,18 @@ export default class Board extends Component {
 				{note.note}
 			</Note>
 		);
+	}
+
+	add(text){
+		this.setState(prevState => ({
+			notes: [
+				...prevState.notes,
+				{
+					id: prevState.notes.length,
+					note: text
+				}
+			]
+		}))
 	}
 
 	remove(id){
@@ -50,6 +54,9 @@ export default class Board extends Component {
 	render(){
 		return (
 			<div className="board">
+				<button id="add"
+				        onClick={this.add.bind(null, 'New Note')}>Add</button>
+
 				{this.state.notes.map(this.eachNote)}
 			</div>
 		);
