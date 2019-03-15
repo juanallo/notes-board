@@ -27,6 +27,16 @@ export default class Board extends Component {
 		);
 	}
 
+	componentWillMount() {
+		if(this.props.count){
+			fetch(`https://baconipsum.com/appi/?type=all&sentences=${this.props.count}`)
+				.then(response => response.json())
+				.then(json => json[0]
+					.split('. ')
+					.forEach(sentence => this.add(sentence.substring(0, 25))));
+		}
+	}
+
 	add(text){
 		this.setState(prevState => ({
 			notes: [
