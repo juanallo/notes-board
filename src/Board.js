@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Note from './Note';
 import Draggable from './Draggable';
+import ls from 'local-storage'
 
 
 export default class Board extends Component {
@@ -11,24 +12,28 @@ export default class Board extends Component {
 		this.state = {
 			notes: []
 		};
-		this.eachNote = this.eachNote.bind(this);
+
+		this.add = this.add.bind(this);
 		this.update = this.update.bind(this);
 		this.remove = this.remove.bind(this);
-		this.add = this.add.bind(this);
+		this.clearAll = this.clearAll.bind(this);
+		this.eachNote = this.eachNote.bind(this);
+
 		this.nextId = this.nextId.bind(this);
 		this.randomBetween = this.randomBetween.bind(this);
 		this.onDragEnd = this.onDragEnd.bind(this);
-		this.clearAll = this.clearAll.bind(this);
 	}
 
-	componentWillMount() {
-		if(this.props.count){
-			fetch(`https://baconipsum.com/appi/?type=all&sentences=${this.props.count}`)
-				.then(response => response.json())
-				.then(json => json[0]
-					.split('. ')
-					.forEach(sentence => this.add(sentence.substring(0, 25))));
+	componentDidMount() {
+		const boardData = ls.get(this.props.boardName);
+		if(boardData) {
+			this.setState(boardData.state);
+			this._nextId = boardData.nextId;
 		}
+	}
+
+	componentDidUpdate(){
+		ls.set(this.props.boardName, {state: this.state, nextId: this._nextId});
 	}
 
 	add(text){
