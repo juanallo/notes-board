@@ -103,6 +103,7 @@ div.board button {
 #add {
   background-color: #5cb85c;
   height: 3em;
+  margin: 10px;
 }
 
 #edit {
@@ -119,4 +120,11 @@ div.board button {
 #remove {
   background-color: #d9534f;
   padding: 4px;
+}
+
+
+#clear-all {
+  background-color: #d9534f;
+  height: 3em;
+  margin: 10px;
 }

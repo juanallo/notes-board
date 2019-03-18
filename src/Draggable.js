@@ -78,8 +78,7 @@ export default class Draggable extends React.Component {
 		return (
 			<Container
 				onMouseDown={this.handleMouseDown}
-				x={x}
-				y={y}
+				x={x} y={y}
 				isDragging={isDragging}>
 				{children}
 			</Container>

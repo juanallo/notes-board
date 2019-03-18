@@ -18,6 +18,7 @@ export default class Board extends Component {
 		this.nextId = this.nextId.bind(this);
 		this.randomBetween = this.randomBetween.bind(this);
 		this.onDragEnd = this.onDragEnd.bind(this);
+		this.clearAll = this.clearAll.bind(this);
 	}
 
 	componentWillMount() {
@@ -63,6 +64,12 @@ export default class Board extends Component {
 		this.setState(prevState => ({notes: prevState.notes.filter(note => note.id !== id)}))
 	}
 
+	clearAll(){
+		this.setState({
+			notes: []
+		});
+	}
+
 	update(newText, id){
 		this.setState(prevState => ({
 			notes: prevState.notes.map(
@@ -98,7 +105,8 @@ export default class Board extends Component {
 			<div className="board">
 				<button id="add"
 				        onClick={this.add.bind(null, 'New Note')}>Add</button>
-
+				<button id="clear-all"
+				        onClick={this.clearAll}>Clear</button>
 				{this.state.notes.map(this.eachNote)}
 			</div>
 		);
