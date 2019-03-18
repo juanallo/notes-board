@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Note from './Note';
+import Draggable from './Draggable';
 
 
 export default class Board extends Component {
@@ -16,6 +17,7 @@ export default class Board extends Component {
 		this.add = this.add.bind(this);
 		this.nextId = this.nextId.bind(this);
 		this.randomBetween = this.randomBetween.bind(this);
+		this.onDragEnd = this.onDragEnd.bind(this);
 	}
 
 	componentWillMount() {
@@ -31,9 +33,9 @@ export default class Board extends Component {
 	add(text){
 		const id = this.nextId();
 
-		const style = {
-			left: this.randomBetween(0, window.innerWidth - 150, 'px'),
-			top: this.randomBetween(0, window.innerHeight - 150, 'px')
+		const coordinates = {
+			x: this.randomBetween(0, window.innerWidth - 150),
+			y: this.randomBetween(0, window.innerHeight - 150)
 		};
 
 		this.setState(prevState => ({
@@ -42,14 +44,14 @@ export default class Board extends Component {
 				{
 					id: id,
 					note: text,
-					style: style
+					coordinates: coordinates
 				}
 			]
 		}))
 	}
 
 	randomBetween(x, y, s){
-		return x + Math.ceil(Math.random() * (y - x)) + s;
+		return x + Math.ceil(Math.random() * (y - x));
 	}
 
 	nextId(){
@@ -71,14 +73,24 @@ export default class Board extends Component {
 
 	eachNote(note){
 		return (
-			<Note   key={note.id}
-			        index={note.id}
-			        style={note.style}
-			        onChange={this.update}
-			        onRemove={this.remove}>
-				{note.note}
-			</Note>
+			<Draggable key={note.id}
+			           onDragEnd={this.onDragEnd.bind(this, note.id)}
+			           {...note.coordinates}>
+				<Note   index={note.id}
+				        onChange={this.update}
+				        onRemove={this.remove}>
+					{note.note}
+				</Note>
+			</Draggable>
 		);
+	}
+
+	onDragEnd(id, coordinates){
+		this.setState(prevState => ({
+			notes: prevState.notes.map(
+				note => (note.id) !== id ? note : {...note, coordinates: coordinates}
+			)
+		}));
 	}
 
 	render(){

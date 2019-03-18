@@ -51,10 +51,9 @@ class Note extends Component {
 
 	renderForm() {
 		return (
-			<div className="note" style={this.props.style}>
+			<div className="note">
 				<form className="note__form" onSubmit={this.save}>
-					<textarea ref={ input => this._nexText = input}>
-						{this.props.children}
+					<textarea ref={ input => this._nexText = input} defaultValue={this.props.children}>
 					</textarea>
 					<div className="form__footer">
 						<button id="save"><FaRegSave /></button>
@@ -66,7 +65,7 @@ class Note extends Component {
 
 	renderDisplay(){
 		return (
-			<div className="note" style={this.props.style}>
+			<div className="note">
 				<p>{this.props.children}</p>
 				<span>
 					<button id="edit" onClick={this.edit}><FaPen  /></button>
