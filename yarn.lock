@@ -7998,7 +7998,7 @@ react-icons@^3.5.0:
   resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/react-icons/-/react-icons-3.5.0.tgz#a6135480e3bcbc63f5dd045193ef2a814263d8d1"
   integrity sha1-phNUgOO8vGP13QRRk+8qgUJj2NE=
 
-react-is@^16.6.0, react-is@^16.8.1:
+react-is@^16.6.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.8.4"
   resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
   integrity sha1-kPM2pow6KaCWo9ZIq4DofsYUgqI=
@@ -8056,6 +8056,16 @@ react-scripts@2.1.8:
     workbox-webpack-plugin "3.6.3"
   optionalDependencies:
     fsevents "1.2.4"
+
+react-test-renderer@^16.8.4:
+  version "16.8.4"
+  resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/react-test-renderer/-/react-test-renderer-16.8.4.tgz#abee4c2c3bf967a8892a7b37f77370c5570d5329"
+  integrity sha1-q+5MLDv5Z6iJKns393NwxVcNUyk=
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    react-is "^16.8.4"
+    scheduler "^0.13.4"
 
 react@^16.8.4:
   version "16.8.4"
