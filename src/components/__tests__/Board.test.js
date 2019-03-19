@@ -12,7 +12,7 @@ describe('Board Test', () => {
 	});
 
 	it('load an empty board', () => {
-		const wrapper = mount(<Board />);
+		const wrapper = mount(<Board boardName="test" />);
 		expect(wrapper.find('.note')).toHaveLength(0);
 	});
 
@@ -35,6 +35,50 @@ describe('Board Test', () => {
 	});
 
 	it('Load a board from Local Storage', () => {
+		ls.set('test', {"state":{"notes":[{"id":0,"note":"New Note","coordinates":{"x":1740,"y":238}},{"id":4,"note":"New Note","coordinates":{"x":1544,"y":510}}]}});
 
+		const wrapper = mount(<Board boardName="test"/>);
+
+		expect(wrapper.find('.note')).toHaveLength(2);
 	});
+
+	it('Remove a note', () => {
+		const wrapper = mountBoardWith2Notes();
+
+		wrapper.instance().remove(0);
+
+		expect(wrapper.state().notes).toHaveLength(1);
+		expect(wrapper.state().notes[0].id).toBe(4);
+	});
+
+	it('update a note', () => {
+		const newText = 'changing note text';
+		const wrapper = mountBoardWith2Notes();
+
+		wrapper.instance().update(newText, 0);
+		expect(wrapper.state().notes[0].note).toEqual(newText);
+	});
+
+	it('Drag a note', () => {
+		const wrapper = mountBoardWith2Notes();
+
+		wrapper.instance().onDragEnd(0, {x:0, y:0});
+		expect(wrapper.state().notes[0].coordinates.x).toBe(0);
+		expect(wrapper.state().notes[0].coordinates.y).toBe(0);
+	});
+
+	function mountBoardWith2Notes() {
+		ls.set('test', {
+			"state": {
+				"notes": [{
+					"id": 0,
+					"note": "New Note",
+					"coordinates": {"x": 1740, "y": 238}
+				}, {"id": 4, "note": "New Note", "coordinates": {"x": 1544, "y": 510}}]
+			}
+		});
+
+		const wrapper = mount(<Board boardName="test"/>);
+		return wrapper;
+	};
 });
