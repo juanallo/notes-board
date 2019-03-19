@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Note from './Note';
 import Draggable from './Draggable';
-import ls from 'local-storage'
+import ls from 'local-storage';
 
 
 export default class Board extends Component {

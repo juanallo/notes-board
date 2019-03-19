@@ -24,10 +24,6 @@ export default class Draggable extends React.Component {
 		window.addEventListener('mousemove', this.handleMouseMove);
 		window.addEventListener('mouseup', this.handleMouseUp);
 
-		if (this.props.onDragStart) {
-			this.props.onDragStart();
-		}
-
 		this.setState({
 			originalX: clientX,
 			originalY: clientY,
