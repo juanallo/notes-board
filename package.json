@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
+    "enzyme": "^3.9.0",
     "local-storage": "^1.4.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -26,7 +27,13 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,jsx,ts,tsx}"
+    ]
+  },
   "devDependencies": {
+    "enzyme-adapter-react-16": "^1.11.2",
     "react-test-renderer": "^16.8.4"
   }
 }

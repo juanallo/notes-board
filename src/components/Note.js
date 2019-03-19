@@ -56,7 +56,7 @@ class Note extends Component {
 					<textarea ref={ input => this._nexText = input} defaultValue={this.props.children}>
 					</textarea>
 					<div className="form__footer">
-						<button id="save"><FaRegSave /></button>
+						<button className="save"><FaRegSave /></button>
 					</div>
 				</form>
 			</div>
@@ -68,8 +68,8 @@ class Note extends Component {
 			<div className="note">
 				<p>{this.props.children}</p>
 				<span>
-					<button id="edit" onClick={this.edit}><FaPen  /></button>
-					<button id="remove" onClick={this.remove}><FaTrash /></button>
+					<button className="edit" onClick={this.edit}><FaPen  /></button>
+					<button className="remove" onClick={this.remove}><FaTrash /></button>
 				</span>
 			</div>
 		);

@@ -110,18 +110,18 @@ div.board button {
   margin: 10px;
 }
 
-#edit {
+.edit {
   background-color: #337ab7;
   padding: 4px;
 }
 
-#save {
+.save {
   background-color: #5cb85c;
   padding: 4px;
   width: 24px;
 }
 
-#remove {
+.remove {
   background-color: #d9534f;
   padding: 4px;
 }
