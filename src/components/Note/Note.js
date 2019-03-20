@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {FaPen, FaTrash, FaRegSave} from 'react-icons/fa';
 import './note.css';
 
@@ -80,5 +81,12 @@ class Note extends Component {
 		return this.state.editing ? this.renderForm() : this.renderDisplay();
 	}
 }
+
+Note.propTypes = {
+	index: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+	onChange: PropTypes.func.isRequired,
+	onRemove: PropTypes.func.isRequired,
+	children: PropTypes.string
+};
 
 export default Note;

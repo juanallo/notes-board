@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 export default class Draggable extends React.Component {
@@ -81,6 +82,12 @@ export default class Draggable extends React.Component {
 		);
 	}
 }
+
+Draggable.propTypes = {
+	x: PropTypes.number,
+	y: PropTypes.number,
+	onDragEnd: PropTypes.func
+};
 
 const Container = styled.div.attrs({
 	style: ({ x, y }) => ({

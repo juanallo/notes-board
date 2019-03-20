@@ -15,14 +15,14 @@ describe('Board Test', () => {
 	});
 
 	it('Add a note', () => {
-		const boardPO = new BoardPageObject(mount(<Board />));
+		const boardPO = new BoardPageObject(mount(<Board boardName="test"/>));
 		expect(boardPO.notes()).toHaveLength(0);
 		boardPO.add();
 		expect(boardPO.notes()).toHaveLength(1);
 	});
 
 	it('clear all notes', () => {
-		const boardPO = new BoardPageObject(mount(<Board />));
+		const boardPO = new BoardPageObject(mount(<Board boardName="test"/>));
 		boardPO.setState({notes: [{id: 1, note: 'text', coordinates: {}}]});
 
 		expect(boardPO.notes()).toHaveLength(1);

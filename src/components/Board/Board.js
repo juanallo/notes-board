@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Note from '../Note/Note';
 import Draggable from '../Draggable';
 import ls from 'local-storage';
@@ -117,3 +118,7 @@ export default class Board extends Component {
 		);
 	}
 }
+
+Board.propTypes = {
+	boardName: PropTypes.string.isRequired
+};

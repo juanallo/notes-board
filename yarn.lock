@@ -5516,11 +5516,6 @@ jest-leak-detector@^23.6.0:
   dependencies:
     pretty-format "^23.6.0"
 
-jest-localstorage-mock@^2.4.0:
-  version "2.4.0"
-  resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/jest-localstorage-mock/-/jest-localstorage-mock-2.4.0.tgz#c6073810735dd3af74020ea6c3885ec1cc6d0d13"
-  integrity sha1-xgc4EHNd0690Ag6mw4hewcxtDRM=
-
 jest-matcher-utils@^23.6.0:
   version "23.6.0"
   resolved "http://artifactory-slc.oraclecorp.com/artifactory/api/npm/npm-virtual/jest-matcher-utils/-/jest-matcher-utils-23.6.0.tgz#726bcea0c5294261a7417afb6da3186b4b8cac80"

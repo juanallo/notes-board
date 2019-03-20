@@ -6,7 +6,7 @@ import NotePageObject from "./utils/pageObject/NotePageObject";
 describe('Note Test', () => {
 
 	it('Note renders without failing', () =>{
-		const wrapper = shallow(<Note index="test"/>);
+		const wrapper = shallow(<Note index="test" onRemove={noOp} onChange={noOp}/>);
 		const notePO = new NotePageObject(wrapper);
 		expect(notePO.note()).toHaveLength(1);
 		expect(notePO.note().text()).toMatch('');
@@ -65,5 +65,9 @@ describe('Note Test', () => {
 		const notePO = new NotePageObject(wrapper);
 
 		return {text, notePO, onChangeMock, onRemoveMock};
+	}
+
+	function noOp() {
+
 	}
 });
