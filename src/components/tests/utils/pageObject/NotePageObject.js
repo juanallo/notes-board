@@ -6,11 +6,11 @@ export default class NotePageObject {
 	}
 
 	note(){
-		return this._component.find('p');
+		return this._component.find('.note__content');
 	}
 
 	noteEditor(){
-		return this._component.find('textarea');
+		return this._component.find('.note__textarea');
 	}
 
 	isEditing(){
@@ -18,7 +18,7 @@ export default class NotePageObject {
 	}
 
 	edit(){
-		this._component.find('.edit').simulate('click');
+		this._component.find('.note__button--edit').simulate('click');
 	}
 
 	save(){
@@ -26,6 +26,6 @@ export default class NotePageObject {
 	}
 
 	remove(){
-		this._component.find('.remove').simulate('click');
+		this._component.find('.note__button--remove').simulate('click');
 	}
 }

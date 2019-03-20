@@ -54,10 +54,10 @@ class Note extends Component {
 		return (
 			<div className="note">
 				<form className="note__form" onSubmit={this.save}>
-					<textarea ref={ input => this._nexText = input} defaultValue={this.props.children}>
+					<textarea className="note__textarea" ref={ input => this._nexText = input} defaultValue={this.props.children}>
 					</textarea>
 					<div className="form__footer">
-						<button className="save"><FaRegSave /></button>
+						<button className="note__button note__button--save"><FaRegSave /></button>
 					</div>
 				</form>
 			</div>
@@ -67,10 +67,10 @@ class Note extends Component {
 	renderDisplay(){
 		return (
 			<div className="note">
-				<p>{this.props.children}</p>
-				<span>
-					<button className="edit" onClick={this.edit}><FaPen  /></button>
-					<button className="remove" onClick={this.remove}><FaTrash /></button>
+				<p className="note__content">{this.props.children}</p>
+				<span className="note__footer">
+					<button className="note__button note__button--edit" onClick={this.edit}><FaPen  /></button>
+					<button className="note__button note__button--remove" onClick={this.remove}><FaTrash /></button>
 				</span>
 			</div>
 		);
