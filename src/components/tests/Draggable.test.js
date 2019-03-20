@@ -1,7 +1,7 @@
 import React from 'react';
-import {mount, shallow} from '../__utils__/EnzymeAdapter';
+import {mount, shallow} from './utils/EnzymeAdapter';
 import Draggable from '../Draggable';
-import {mouseUp, mouseMove} from '../__utils__/MouseSimulator';
+import {mouseUp, mouseMove} from './utils/MouseSimulator';
 
 describe('Draggable Test', ()=> {
 	it('load a Draggable in a particular position', () => {

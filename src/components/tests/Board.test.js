@@ -1,8 +1,8 @@
 import React from 'react';
-import {mount} from '../__utils__/EnzymeAdapter';
+import {mount} from './utils/EnzymeAdapter';
 import Board from '../Board';
 import ls from 'local-storage'
-import BoardPageObject from "../__utils__/pageObject/BoardPageObject";
+import BoardPageObject from "./utils/pageObject/BoardPageObject";
 
 describe('Board Test', () => {
 	afterEach(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import {mount, shallow} from '../__utils__/EnzymeAdapter';
+import {mount, shallow} from './utils/EnzymeAdapter';
 import Note from '../Note';
-import NotePageObject from "../__utils__/pageObject/NotePageObject";
+import NotePageObject from "./utils/pageObject/NotePageObject";
 
 describe('Note Test', () => {
 
