@@ -1,10 +1,7 @@
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
-import { mount, shallow, configure } from 'enzyme';
+import {mount} from '../__utils__/EnzymeAdapter';
 import Board from '../Board';
 import ls from 'local-storage'
-
-configure({adapter: new Adapter()});
 
 describe('Board Test', () => {
 	afterEach(()=>{

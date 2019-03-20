@@ -1,10 +1,7 @@
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
-import { mount, shallow, configure } from 'enzyme';
+import {mount, shallow} from '../__utils__/EnzymeAdapter';
 import Draggable from '../Draggable';
-
-configure({adapter: new Adapter()});
-
+import {mouseUp, mouseMove} from '../__utils__/MouseSimulator';
 
 describe('Draggable Test', ()=> {
 	it('load a Draggable in a particular position', () => {
@@ -45,17 +42,4 @@ describe('Draggable Test', ()=> {
 	it('Special l&f when dragging', () => {
 
 	});
-
-	function mouseMove(x, y) {
-		const evt = document.createEvent('MouseEvents');
-		evt.initMouseEvent("mousemove", true, true, window, 0, 0, 0, x, y, false, false, false, false, 0, null);
-		document.dispatchEvent(evt);
-		return evt;
-	}
-
-	function mouseUp(){
-		const evt = document.createEvent('MouseEvents');
-		evt.initMouseEvent("mouseup", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-		document.dispatchEvent(evt);
-	}
 });

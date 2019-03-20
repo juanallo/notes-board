@@ -101,7 +101,7 @@ div.note textarea {
 div.board button {
   color: #fff;
   font-size: 14px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.55);
 }
 
 #add {
@@ -112,18 +112,18 @@ div.board button {
 
 .edit {
   background-color: #337ab7;
-  padding: 4px;
+  padding: 4px !important;
 }
 
 .save {
   background-color: #5cb85c;
-  padding: 4px;
+  padding: 4px !important;
   width: 24px;
 }
 
 .remove {
   background-color: #d9534f;
-  padding: 4px;
+  padding: 4px !important;
 }
 
 

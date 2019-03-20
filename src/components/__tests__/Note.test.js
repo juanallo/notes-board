@@ -1,9 +1,7 @@
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
-import { mount, shallow, configure } from 'enzyme';
+import {mount, shallow} from '../__utils__/EnzymeAdapter';
 import Note from '../Note';
-
-configure({adapter: new Adapter()});
 
 describe('Note Test', () => {
 	it('Note renders without failing', () =>{
