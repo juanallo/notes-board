@@ -1,0 +1,86 @@
+.note {
+  height: 150px;
+  width: 200px;
+  background-color: yellow;
+  margin: 2px 0;
+  position: absolute;
+  cursor: -webkit-grab;
+  -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
+}
+
+.note:active {
+  cursor: -webkit-grabbing;
+}
+
+.note p {
+  font-size: 22px;
+  padding: 5px;
+  font-family: "Shadows Into Light", Arial;
+  word-break: break-all;
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.note:hover > span {
+  opacity: 1;
+}
+
+.note > span {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity .25s linear;
+}
+
+.note button {
+  margin: 2px;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  padding: 0;
+}
+
+.note__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.form__footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.note textarea {
+  height: 75% !important;
+  background: rgba(255, 255, 255, .5);
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+}
+
+.edit {
+  background-color: #337ab7;
+  padding: 4px !important;
+}
+
+.save {
+  background-color: #5cb85c;
+  padding: 4px !important;
+  width: 24px;
+}
+
+.remove {
+  background-color: #d9534f;
+  padding: 4px !important;
+}

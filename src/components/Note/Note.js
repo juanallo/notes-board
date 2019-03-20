@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {FaPen, FaTrash, FaRegSave} from 'react-icons/fa';
+import './note.css';
 
 class Note extends Component {
 

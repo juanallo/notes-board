@@ -1,6 +1,6 @@
 import React from 'react';
 import {mount} from './utils/EnzymeAdapter';
-import Board from '../Board';
+import Board from '../Board/Board';
 import ls from 'local-storage'
 import BoardPageObject from "./utils/pageObject/BoardPageObject";
 

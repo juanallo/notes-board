@@ -2,8 +2,8 @@
 
 body,
 html,
-div.board,
-div#react-container {
+.board,
+#react-container {
   height: 100%;
   overflow: hidden;
 }
@@ -13,122 +13,9 @@ body {
   padding: 0;
 }
 
-div.board {
-  width: 100%;
-  height: 1000px;
-  background: #eab92d;
-  background: -moz-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(57%, #eab92d), color-stop(99%, #c79810));
-  background: -webkit-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-  background: -o-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-  background: -ms-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
-  background: radial-gradient(ellipse at center, #eab92d 57%, #c79810 99%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eab92d', endColorstr='#c79810', GradientType=1);
-  overflow: auto;
-}
 
-div.note {
-  height: 150px;
-  width: 200px;
-  background-color: yellow;
-  margin: 2px 0;
-  position: absolute;
-  cursor: -webkit-grab;
-  -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
-  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
-}
-
-div.note:active {
-  cursor: -webkit-grabbing;
-}
-
-div.note p {
-  font-size: 22px;
-  padding: 5px;
-  font-family: "Shadows Into Light", Arial;
-  word-break: break-all;
-  overflow: auto;
+#root {
   height: 100%;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-div.note:hover > span {
-  opacity: 1;
-}
-
-div.note > span {
-  position: absolute;
-  bottom: 2px;
-  right: 2px;
-  opacity: 0;
-  transition: opacity .25s linear;
-}
-
-div.note button {
-  margin: 2px;
-  color: #fff;
-  font-size: 14px;
-  border: none;
-  padding: 0;
-}
-
-.note__form {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: end;
-  height: 100%;
-}
-
-.form__footer {
-  display: flex;
-  justify-content: end;
   width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-div.note textarea {
-  height: 75% !important;
-  background: rgba(255, 255, 255, .5);
-  flex-grow: 1;
-  width: 100%;
-  box-sizing: border-box;
-  border: 0;
-}
-
-div.board button {
-  color: #fff;
-  font-size: 14px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.55);
-}
-
-#add {
-  background-color: #5cb85c;
-  height: 3em;
-  margin: 10px;
-}
-
-.edit {
-  background-color: #337ab7;
-  padding: 4px !important;
-}
-
-.save {
-  background-color: #5cb85c;
-  padding: 4px !important;
-  width: 24px;
-}
-
-.remove {
-  background-color: #d9534f;
-  padding: 4px !important;
-}
-
-
-#clear-all {
-  background-color: #d9534f;
-  height: 3em;
-  margin: 10px;
+  display: flex;
 }
