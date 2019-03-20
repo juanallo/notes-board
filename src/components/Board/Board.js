@@ -108,9 +108,9 @@ export default class Board extends Component {
 	render(){
 		return (
 			<div className="board">
-				<button id="add"
+				<button className="board__button board__button--add"
 				        onClick={this.add.bind(null, 'New Note')}>Add</button>
-				<button id="clear-all"
+				<button className="board__button board__button--clear"
 				        onClick={this.clearAll}>Clear</button>
 				{this.state.notes.map(this.eachNote)}
 			</div>

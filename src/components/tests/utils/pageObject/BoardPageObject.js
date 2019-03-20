@@ -11,10 +11,10 @@ export default class BoardPageObject {
 	}
 
 	add(){
-		this._component.find('#add').simulate('click');
+		this._component.find('.board__button--add').simulate('click');
 	}
 
 	clearAll(){
-		this._component.find('#clear-all').simulate('click');
+		this._component.find('.board__button--clear').simulate('click');
 	}
 }
